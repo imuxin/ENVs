@@ -62,7 +62,7 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 " height ligth cusor
 " set bg=dark
 set cursorline
-highlight CursorLine cterm=none ctermbg=253
+highlight CursorLine cterm=none ctermbg=239
 
 " set cursorcolumn
 
