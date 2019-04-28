@@ -16,6 +16,11 @@ function bye
   builtin history clear
 end
 
+## fish system's colors setting
+
+set fish_color_autosuggestion fdf6e3
+set fish_pager_color_completion red --bold
+
 # bobthefish theme settings
 # set -g theme_color_scheme light
 # set -g theme_color_scheme dark
@@ -39,5 +44,4 @@ set -g theme_display_git_dirty_verbose yes
 set -g theme_display_git_stashed_verbose yes
 set -g theme_display_git_master_branch yes
 # set -g theme_git_worktree_support yes
-set -g theme_newline_prompt '$ '
-set -g theme_display_vi yes
+
