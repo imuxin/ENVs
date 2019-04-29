@@ -1,3 +1,4 @@
+scriptencoding utf-8
 set encoding=utf-8
 set nocompatible              " 去除VI一致性,必须
 filetype off                  " 必须
@@ -14,9 +15,28 @@ let $PATH="/System/Library/Frameworks/Python.framework/Versions/Current/bin:" . 
 " 显示行号
 set number
 
-" tab键=4个空格
-set ts=4
+" set lcs=space:␣
+" set list
+
+" tab键=2个空格
+set ts=2
 set expandtab
+
+" A good line to memorize:
+"  :set et sts=4 sw=4 ts=4
+
+"   et  = expandtab (spaces instead of tabs)
+"   ts  = tabstop (the number of spaces that a tab equates to)
+"   sw  = shiftwidth (the number of spaces to use when indenting
+"         -- or de-indenting -- a line)
+"   sts = softtabstop (the number of spaces to use when expanding tabs)
+
+
+" YAML file indentaion setting
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
+
+" shell file indentaion setting
+autocmd FileType sh setlocal ts=2 sts=2 sw=4 expandtab
 
 
 " 开启语法高亮功能
@@ -48,6 +68,7 @@ call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 call NERDTreeHighlightFile('ini', 172, 'none', '#ff9b6d', '#151515')
 call NERDTreeHighlightFile('md', 228, 'none', '#3366FF', '#151515')
 call NERDTreeHighlightFile('yml', 172, 'none', '#ff9b6d', '#151515')
+call NERDTreeHighlightFile('yaml', 172, 'none', '#ff9b6d', '#151515')
 call NERDTreeHighlightFile('config', 172, 'none', '#ff9b6d', '#151515')
 call NERDTreeHighlightFile('conf', 172, 'none', 172, '#151515')
 call NERDTreeHighlightFile('json', 172, 'none', 172, '#151515')
