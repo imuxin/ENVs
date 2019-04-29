@@ -46,7 +46,7 @@ endfunction
 
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
 call NERDTreeHighlightFile('ini', 172, 'none', '#ff9b6d', '#151515')
-call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('md', 228, 'none', '#3366FF', '#151515')
 call NERDTreeHighlightFile('yml', 172, 'none', '#ff9b6d', '#151515')
 call NERDTreeHighlightFile('config', 172, 'none', '#ff9b6d', '#151515')
 call NERDTreeHighlightFile('conf', 172, 'none', 172, '#151515')
@@ -63,6 +63,7 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 " set bg=dark
 set cursorline
 highlight CursorLine cterm=none ctermbg=239
+highlight Visual cterm=bold ctermbg=245 ctermfg=NONE
 
 " set cursorcolumn
 
