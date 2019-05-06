@@ -1,0 +1,9 @@
+# muxin's bashrc
+# the following configuration is appended from muxin's fish config
+# Ref link: `https://github.com/imuxin/ENVs`
+
+export LC_ALL=en_US.UTF-8
+export LANG=en_US.UTF-8
+
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+

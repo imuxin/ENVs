@@ -2,6 +2,7 @@ scriptencoding utf-8
 set encoding=utf-8
 set nocompatible              " 去除VI一致性,必须
 filetype off                  " 必须
+set termguicolors
 
 " backspace over everything in insert mode
 " set backspace=indent,eol,start
@@ -10,7 +11,7 @@ filetype off                  " 必须
 " Since python@2 and python had been installed in /usr/local/, the system's
 " vim cannot distinguish between these python executors and system's python
 " interpreter.
-let $PATH="/System/Library/Frameworks/Python.framework/Versions/Current/bin:" . $PATH
+let $PATH="/usr/bin:" . $PATH
 
 " 显示行号
 set number
@@ -64,15 +65,28 @@ function! NERDTreeHighlightFile(extension, fg, bg, guifg, guibg)
 endfunction
 
 
+" call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
+" call NERDTreeHighlightFile('ini', 172, 'none', '#ff9b6d', '#151515')
+" call NERDTreeHighlightFile('md', 228, 'none', '#3366FF', '#151515')
+" call NERDTreeHighlightFile('yml', 172, 'none', '#ff9b6d', '#151515')
+" call NERDTreeHighlightFile('yaml', 172, 'none', '#ff9b6d', '#151515')
+" call NERDTreeHighlightFile('config', 172, 'none', '#ff9b6d', '#151515')
+" call NERDTreeHighlightFile('conf', 172, 'none', 172, '#151515')
+" call NERDTreeHighlightFile('json', 172, 'none', 172, '#151515')
+" call NERDTreeHighlightFile('html', 172, 'none', 172, '#151515')
+" call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
+" call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
+" call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
+" call NERDTreeHighlightFile('js', 'Red', 'none', '#ffa500', '#151515')
+" call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 call NERDTreeHighlightFile('jade', 'green', 'none', 'green', '#151515')
-call NERDTreeHighlightFile('ini', 172, 'none', '#ff9b6d', '#151515')
-call NERDTreeHighlightFile('md', 228, 'none', '#3366FF', '#151515')
-call NERDTreeHighlightFile('yml', 172, 'none', '#ff9b6d', '#151515')
-call NERDTreeHighlightFile('yaml', 172, 'none', '#ff9b6d', '#151515')
-call NERDTreeHighlightFile('config', 172, 'none', '#ff9b6d', '#151515')
-call NERDTreeHighlightFile('conf', 172, 'none', 172, '#151515')
-call NERDTreeHighlightFile('json', 172, 'none', 172, '#151515')
-call NERDTreeHighlightFile('html', 172, 'none', 172, '#151515')
+call NERDTreeHighlightFile('ini', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('md', 'blue', 'none', '#3366FF', '#151515')
+call NERDTreeHighlightFile('yml', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('config', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('conf', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('json', 'yellow', 'none', 'yellow', '#151515')
+call NERDTreeHighlightFile('html', 'yellow', 'none', 'yellow', '#151515')
 call NERDTreeHighlightFile('styl', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('css', 'cyan', 'none', 'cyan', '#151515')
 call NERDTreeHighlightFile('coffee', 'Red', 'none', 'red', '#151515')
@@ -83,8 +97,12 @@ call NERDTreeHighlightFile('php', 'Magenta', 'none', '#ff00ff', '#151515')
 " height ligth cusor
 " set bg=dark
 set cursorline
-highlight CursorLine cterm=none ctermbg=239
+" highlight CursorLine cterm=none ctermbg=239
 highlight Visual cterm=bold ctermbg=245 ctermfg=NONE
+
+
+" Change color settings in YouCompleteMe
+highlight Pmenu ctermfg=15 ctermbg=0 guifg=#ffffff guibg=#ff8700
 
 " set cursorcolumn
 
@@ -104,7 +122,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'itchyny/vim-cursorword'
 
 " A code-completion engine for vim
-Plugin 'valloric/youcompleteme'
+Plugin 'Valloric/YouCompleteMe'
 
 " A git wrapper so awesome, it should be illegal
 " ref: https://vimawesome.com/plugin/fugitive-vim

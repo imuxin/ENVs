@@ -16,6 +16,10 @@ export LANG=en_US.UTF-8
 # sudo yum install -y curl file git
 ## On Debian or Ubuntu
 # sudo apt-get install -y build-essential curl file git
+## On OpenSuse
+sudo zypper install git kernel-devel tree
+sudo zypper install --type pattern devel_basis
+
 
 sudo chown -R $(whoami): /home/
 sudo chown -R $(whoami): /home/$(whoami)
@@ -42,13 +46,8 @@ curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fi
 
 fish -c "fisher add oh-my-fish/theme-bobthefish"
 
-# Install powerline
-## Ref link: `https://github.com/powerline/powerline`
-pip3 install powerline-status
-sudo chmod -R 777 $PIP3_INSTALL_PATH/powerline/bindings/bash/powerline.sh
-
 ## Config bashrc
-cat .bashrc | tee -a ~/.bashrc ~/.config/fish/config.fish
+cat .bashrc_for_opensuse | tee -a ~/.bashrc ~/.config/fish/config.fish
 ## Config fish
 cat .config/fish/config.fish | tee -a ~/.config/fish/config.fish
 
@@ -60,9 +59,26 @@ cat .config/fish/functions/fish_greeting.fish | tee -a ~/.config/fish/functions/
 
 
 
-## vim configurations
+# vim configurations
 
-# Install vundle plugin manager for vim
+## Install vundle plugin manager for vim
 git clone https://github.com/VundleVim/Vundle.vim.git ~/.vim/bundle/Vundle.vim
 
+# Install Google Chrome
+sudo zypper ar http://dl.google.com/linux/chrome/rpm/stable/x86_64 Google-Chrome
+sudo zypper ref
+wget https://dl.google.com/linux/linux_signing_key.pub
+sudo rpm --import linux_signing_key.pub
+sudo zypper install google-chrome-stable
 
+
+# How to install docker
+# 1. `sudo yast2  sw_single` to start yast2 software management window.
+# 2. input 'docker' to search docker package.
+# 3. select and install.
+# 4. `sudo yast2  services-manager` open service management window.
+# 5. select docker service and start and on-boot it.
+
+# How to install ibus-googlepinyin
+## reboot needed
+sudo zypper in ibus ibus-qt ibus-googlepinyin

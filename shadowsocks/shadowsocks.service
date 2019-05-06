@@ -1,0 +1,22 @@
+[Unit]
+Description=Local shadowsocks proxy service
+Documentation=https://github.com/shadowsocks/shadowsocks
+After=SuSEfirewall2.service
+
+[Service]
+EnvironmentFile=/etc/sysconfig/shadowsocks                                                                                                                                                                        
+
+Type=simple
+ExecStart=/home/linuxbrew/.linuxbrew/bin/sslocal -c $config_file
+ExecReload=/bin/kill -s HUP $MAINPID
+
+# Kill only the docker process, not all processes in the cgroup.
+KillMode=process
+
+# Restart the docker process if it exits prematurely.
+Restart=on-failure
+StartLimitBurst=3
+StartLimitInterval=60s
+
+[Install]
+WantedBy=multi-user.target

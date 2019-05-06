@@ -1,0 +1,6 @@
+## Description    : Extra cli switches for docker daemon
+## Type           : string
+## Default        : ""
+## ServiceRestart : shadowsocks
+#                                                                                                                                                                                                             
+config_file="/home/muxin/.shadowsocks/cvm.json"

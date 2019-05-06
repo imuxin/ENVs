@@ -6,6 +6,10 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+alias docker="sudo docker"
+alias tree="tree -a -N"
+
+## disable virtual env prompt
 set -g VIRTUAL_ENV_DISABLE_PROMPT 1
 
 function up
