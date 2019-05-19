@@ -20,6 +20,14 @@ function bye
   builtin history clear
 end
 
+# Create empty folder git can add
+function mk_git_dir
+  for dir_name in $argv
+    mkdir -p $dir_name
+    echo -e "# Ignore everything in this directory\n*\n# Except this file\n!.gitignore\n" > $dir_name/.gitignore
+  end
+end
+
 ## fish system's colors setting
 
 set fish_color_autosuggestion fdf6e3
@@ -48,4 +56,3 @@ set -g theme_display_git_dirty_verbose yes
 set -g theme_display_git_stashed_verbose yes
 set -g theme_display_git_master_branch yes
 # set -g theme_git_worktree_support yes
-
