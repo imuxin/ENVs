@@ -5,17 +5,22 @@
 # Set locale to en_US.UTF-8
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
+export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
+alias zypper="sudo zypper"
 alias docker="sudo docker"
-alias tree="tree -a -N"
+alias docker-compose="sudo docker-compose"
+alias tree="tree -N"
 
 ## disable virtual env prompt
 set -g VIRTUAL_ENV_DISABLE_PROMPT 1
 
+# ping 8.8.8.8
 function up
   ping 8.8.8.8
 end
 
+# clear fish history cache
 function bye
   builtin history clear
 end
@@ -26,6 +31,10 @@ function mk_git_dir
     mkdir -p $dir_name
     echo -e "# Ignore everything in this directory\n*\n# Except this file\n!.gitignore\n" > $dir_name/.gitignore
   end
+
+# docker images --tree
+function dockviz
+  docker run -it --rm -v /var/run/docker.sock:/var/run/docker.sock nate/dockviz images -t
 end
 
 ## fish system's colors setting
@@ -45,7 +54,7 @@ set -g theme_color_scheme solarized
 # set -g theme_color_scheme base16-light
 
 set -g theme_nerd_fonts yes
-set -g theme_powerline_fonts no
+set -g theme_powerline_fonts noexport PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 set -g theme_show_exit_status yes
 set -g theme_display_git_untracked no
 set -g theme_display_git yes
