@@ -31,6 +31,7 @@ function mk_git_dir
     mkdir -p $dir_name
     echo -e "# Ignore everything in this directory\n*\n# Except this file\n!.gitignore\n" > $dir_name/.gitignore
   end
+end
 
 # docker images --tree
 function dockviz
