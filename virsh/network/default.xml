@@ -1,0 +1,12 @@
+<network>
+  <name>inner</name>
+  <uuid>ee19099b-5197-4efc-84e2-a99c3c5d07b8</uuid>
+  <forward mode='nat'/>
+  <bridge name='vir_inner_br0' stp='on' delay='0'/>
+  <mac address='52:54:00:3c:0c:73'/>
+  <ip address='10.20.0.1' netmask='255.255.255.0'>
+    <dhcp>
+      <range start='10.20.0.2' end='10.20.0.254'/>
+    </dhcp>
+  </ip>
+</network>
