@@ -9,5 +9,5 @@ export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
 
 # enable powerline in bash.
 PIP3_INSTALL_PATH=$(pip3 show powerline-status|grep Location|awk -F ': ' '{print $2}')
-sh -c "$PIP3_INSTALL_PATH/powerline/bindings/bash/powerline.sh"
+bash -c "$PIP3_INSTALL_PATH/powerline/bindings/bash/powerline.sh"
 
