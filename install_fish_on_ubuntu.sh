@@ -4,10 +4,15 @@
 export LC_ALL=en_US.UTF-8
 export LANG=en_US.UTF-8
 
+# Set user no password
+echo "muxin ALL=(ALL) NOPASSWD: ALL" | sudo tee -a /etc/sudoers
 
-sudo apt install -y build-essential curl file git
+
+# Install basic tools
+sudo apt install -y build-essential curl file git net-tools
 
 
+# Change home directory owner
 sudo chown -R $(whoami): /home/
 sudo chown -R $(whoami): /home/$(whoami)
 
@@ -48,5 +53,12 @@ brew install git bash-completion && sudo apt remove -y git
 # Config fish
 cat .bashrc | tee -a ~/.bashrc
 cat .config/fish/config_linux.fish | tee -a ~/.config/fish/config.fish
+cat .config/fish/functions/fish_right_prompt.fish | tee -a ~/.config/fish/functions/fish_right_prompt.fish
+cat .config/fish/functions/fish_greeting.fish | tee -a ~/.config/fish/functions/fish_greeting.fish
 # TODO: change color setting
 # TODO: change prompt
+
+# config fish shell
+sudo ln -s /home/linuxbrew/.linuxbrew/bin/fish /bin/fish
+echo "/bin/fish" | tee -a /etc/shells
+sudo chsh -s /bin/fish
