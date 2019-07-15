@@ -61,5 +61,5 @@ cat .config/fish/functions/fish_greeting.fish | tee -a ~/.config/fish/functions/
 
 # config fish shell
 sudo ln -s /home/linuxbrew/.linuxbrew/bin/fish /bin/fish
-echo "/bin/fish" | tee -a /etc/shells
+echo "/bin/fish" | sudo tee -a /etc/shells
 sudo chsh -s /bin/fish

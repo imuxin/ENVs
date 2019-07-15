@@ -22,7 +22,7 @@ end
 
 # clear fish history cache
 function bye
-  builtin history clear
+  clear && builtin history clear
 end
 
 # Create empty folder git can add
