@@ -29,8 +29,9 @@ brew link --overwrite fish
 
 # Install fisher, A package manager for the fish shell
 ## GitHub ref: `https://github.com/jorgebucaran/fisher`
-curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
-fish -c "fisher add oh-my-fish/theme-bobthefish"
+# curl https://git.io/fisher --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+curl http://www.slicloud.com:38876/muxin/fisher/raw/branch/gitea/master/fisher.fish --create-dirs -sLo ~/.config/fish/functions/fisher.fish
+fish -c "fisher add ssh://git@www.slicloud.com:22022/muxin/theme-bobthefish.git@gitea/master"
 
 
 # Install python
